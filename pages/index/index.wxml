@@ -1,1 +1,9 @@
-<view class="title">hello world!</view>
+<view class="weather-wapper">
+<view class="temp">
+  12°
+</view>
+<view class="weather">
+晴天
+</view>
+<image class="weather-bg" src="./imgs/sunny-bg.png" mode="scaleToFill"></image>
+</view>
