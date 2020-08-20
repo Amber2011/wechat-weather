@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"enhance": false,
 		"postcss": true,
@@ -32,7 +32,7 @@
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
-	"appid": "wxdb12c9335b4ea5d4",
+	"appid": "wxb792de3c830f1f1a",
 	"projectname": "weather",
 	"debugOptions": {
 		"hidedInDevtools": []

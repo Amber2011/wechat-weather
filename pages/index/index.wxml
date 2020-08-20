@@ -1,9 +1,12 @@
 <view class="weather-wapper">
 <view class="temp">
-  12°
+  {{temperature}}
 </view>
 <view class="weather">
-晴天
+{{wea}}
 </view>
-<image class="weather-bg" src="./imgs/sunny-bg.png" mode="scaleToFill"></image>
+<image class="weather-bg" src="{{weatherPng}}" mode="scaleToFill"></image>
+<view class="weather"> 
+  <text>{{weatherData.city}}</text> 
+</view>
 </view>
