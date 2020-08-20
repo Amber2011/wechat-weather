@@ -7,6 +7,33 @@
 </view>
 <image class="weather-bg" src="{{weatherPng}}" mode="scaleToFill"></image>
 <view class="weather"> 
-  <text>{{weatherData.city}}</text> 
+  <text>{{weatherData.city}}</text>
+  <view>{{data[0].air_tips}}</view>
 </view>
 </view>
+
+<view class="timetips">
+  <image class="timetips-icon" src="./imgs/time-icon.png"></image>
+  <view class="timetips-text">近7日天气预测</view>
+ </view>
+
+<scroll-view scroll-x>
+  <view class="nextlist" >
+  <view class="nextitem" wx:for="{{data}}">
+    <view class="nexttime">{{item.day}}</view>
+    <image class="nexticon" src='{{weaicon}}'></image>
+    <view class="nexttemp">{{item.tem}}</view>
+  </view>
+ 
+  </view>
+ 
+</scroll-view>
+
+ <!-- <view class="nextlist" ><view class="next6" wx:for="{{data}}">{{item.wea}}</view></view>
+  <view class="nextlist" ><view class="next6" wx:for="{{data}}">{{item.tem}}</view></view> -->
+
+
+
+
+
+

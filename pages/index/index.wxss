@@ -29,4 +29,50 @@
   z-index: -1;
 
 }
+.timetips {
+  display: flex; /*横排排列?*/
+  justify-content: center;
+  align-items: center;
+  margin-top: 40rpx;
+  margin-bottom: 45rpx;
+}
+
+.timetips-icon {
+  margin-right: 10rpx;
+  width: 36rpx;/*行高一般为文字大小1.4倍*/
+  height: 28rpx;
+}
+
+.timetips-text {
+  font-size: 30rpx;
+  line-height: 42rpx;
+  opacity: 0.5;
+}
+.nextlist{
+  display: flex;
+}
+
+.nextitem{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex-shrink: 0;/*关闭自动压缩*/
+  width: 240rpx;
+  align-items: center;
+}
+
+.nexttime{
+  font-size: 30rpx;
+  line-height: 42rpx;
+}
+.nexticon{
+  margin-top: 50rpx;
+  width: 60rpx;
+  height: 60rpx;
+}
+.nexttemp{
+  margin-top: 46rpx;
+  font-size: 40rpx;
+  line-height: 56rpx;
+}
 

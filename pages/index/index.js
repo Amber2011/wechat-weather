@@ -1,17 +1,20 @@
+//左边为返回的值,右边为对应的映射
 const weaMap={
-  // '晴天': 'sunny',
-  // '多云': 'cloudy',
-  // '阴': 'overcast',
-  // '小雨': 'lightrain',
-  // '大雨': 'heavyrain',
-  // '雪': 'snow',
+  '晴': '晴天',
+  '多云': '多云',
+  '阴': '阴',
+  '小雨': '小雨',
+  '大雨': '大雨',
+  '雪': '雪',
     '中雨':'大雨',
+    '中雨转小雨':'小雨',
 }
 const weatherColorMap = {
   '晴天': '#cbeefd',
   '多云': '#deeef6',
   '阴': '#c6ced2',
   '中雨':'c5ccd0',
+  '中雨转小雨':'bdd5e1',
   '小雨': '#bdd5e1',
   '大雨': '#c5ccd0',
   '雪': '#aae1fc'
@@ -23,7 +26,9 @@ Page({
     city:'',
     wea:'',
     temperature:'',
+    data:'',
     weatherPng:'./imgs/晴天-bg.png',
+    weaicon:'./imgs/多云-icon.png',
     pngname:'',
   },
   onPullDownRefresh(){
@@ -36,19 +41,22 @@ Page({
     wx.request({
       url: 'https://yiketianqi.com/api?&appid=31781413&appsecret=GO4GUeNE&',
       data:{
-        city:'郑州',
+        city:'上海',
       },
       header: {
         'content-type': 'application/json' // 默认值
       },
       success (res) {
         console.log(res.data);
+        console.log(res.data.data[0].wea);
         that.setData({
           weatherData:res.data,
+          data:res.data.data,
           city:res.data.city,
           wea:res.data.data[0].wea,
           temperature:res.data.data[0].tem,
           weatherPng:'./imgs/'+weaMap[res.data.data[0].wea]+'-bg.png',
+          weaicon:'./imgs/'+weaMap[res.data.data[0].wea]+'-icon.png'
         });
         wx.setNavigationBarColor({
           frontColor: '#000000',
@@ -62,6 +70,7 @@ Page({
   },
   onLoad(){
     this.getNow();
+    
   }
 })
 
